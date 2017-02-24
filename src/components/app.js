@@ -29,7 +29,7 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-  return { forecast: state.forecase.all };
+  return { forecast: state.forecast.all };
 }
 
 export default connect(mapStateToProps, {

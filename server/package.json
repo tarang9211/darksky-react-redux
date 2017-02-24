@@ -1,0 +1,22 @@
+{
+  "name": "dark-sky-server",
+  "version": "1.0.0",
+  "description": "api server for dev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "darksky",
+    "api",
+    "express",
+    "react"
+  ],
+  "author": "Tarang Hirani",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1"
+  }
+}

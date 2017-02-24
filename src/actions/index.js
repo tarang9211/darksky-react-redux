@@ -9,8 +9,7 @@ export const FETCH_FORECAST = 'FETCH_FORECAST';
 export function fetchForecast(props) {
   const { latitude, longitude } = props;
   // const request = fetch(`/api/forecast?latitude=${latitude}&longitude=${longitude}`)
-  const request = axios.get('/api')
-  console.log(request);
+  const request = axios.get(`http://localhost:8081/api/forecast?latitude=${latitude}&longitude=${longitude}`)
 
   return {
     type: FETCH_FORECAST,

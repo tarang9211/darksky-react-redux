@@ -79,7 +79,6 @@ div.forecast-list-item {
   font-size: 0.98em;
 }
 
-
 .content {
   flex: 3;
   text-align: center;
@@ -101,4 +100,9 @@ div.forecast-list-item {
   padding: 0 0.3em 0 0.3em;
   font-size: 1.28571429em;
   text-align: center;
+}
+
+.icon-time {
+  width: 20px;
+  height: 20px;
 }

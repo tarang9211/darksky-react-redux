@@ -10,11 +10,13 @@ import ForecastContent        from './forecast-content';
 
 class App extends Component {
   componentWillMount() {
-    navigator.geolocation.getCurrentPosition(
-      this.handleGeolocationSuccess,
-      this.handleGeolocationError,
-      { enableHighAccuracy: true, timeout: 20000, maximumAge: 2000 },
-    );
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        this.handleGeolocationSuccess,
+        this.handleGeolocationError,
+        { enableHighAccuracy: true, timeout: 20000, maximumAge: 2000 },
+      );
+    }
   }
 
   //callback to handle success

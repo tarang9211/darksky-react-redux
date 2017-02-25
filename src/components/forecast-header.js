@@ -4,8 +4,8 @@ import moment from 'moment';
 //Stateless Functional Component.
 const ForecastHeader = ({ weather }) => (
   <div className="header">
-    <div className="header-wind">
-      <span>{weather.windSpeed.toFixed(1)} mi/h</span>
+    <div className="header-wind" title='Wind Speed'>
+      <span >{weather.windSpeed.toFixed(0)}<small>mph</small></span>
     </div>
     <div className="header-time">
       <span>

@@ -3,8 +3,8 @@ import React, { PropTypes } from 'react';
 const ForecastContent = ({ maxTemp, minTemp }) => (
   <div className='content'>
     <div className='content-temp'>
-      <p className='content-max-temp'>{maxTemp.toFixed(0)}&deg;</p>
-      <p className='content-min-temp'>{minTemp.toFixed(0)}&deg;</p>
+      <p className='content-max-temp' title='Maximum Temperature'>{maxTemp.toFixed(0)}&deg;</p>
+      <p className='content-min-temp' title='Minimum Temperature'>{minTemp.toFixed(0)}&deg;</p>
     </div>
   </div>
 )

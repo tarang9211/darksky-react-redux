@@ -56,6 +56,7 @@ div.forecast-list-item {
 
 .header {
   text-align: center;
+  padding-top: 0.8em;
 }
 
 .footer {
@@ -71,6 +72,11 @@ div.forecast-list-item {
 
 .header .header-wind, .header .header-time {
   flex: 1;
+  color: #8c8c8c;
+}
+
+.header .header-time {
+  font-size: 0.98em;
 }
 
 

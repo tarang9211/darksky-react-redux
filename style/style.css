@@ -36,6 +36,27 @@ div.forecast-list {
   min-height: 100vh;
 }
 
+div.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  animation: scale 2s infinite;
+}
+
+@-webkit-keyframes scale {
+    0% {
+        -webkit-transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(1.5);
+    }
+
+    100% {
+      -webkit-transform: scale(1);
+    }
+}
+
 div.forecast-list-item {
   display: flex;
   flex-direction: column;

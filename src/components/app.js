@@ -51,11 +51,19 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div className="forecast-list">
-        {this.renderForecastedWeather()}
-      </div>
-    );
+    if (this.props.forecast.length == 0 || !this.props.location) {
+      return (
+        <div className='loading'>
+          Loading
+        </div>
+      )
+    } else {
+      return (
+        <div className="forecast-list">
+          {this.renderForecastedWeather()}
+        </div>
+      )
+    }
   }
 }
 

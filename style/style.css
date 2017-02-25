@@ -1,0 +1,37 @@
+html, body {
+  margin: 0px;
+  height: 100%;
+}
+
+div.forecast-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+div.forecast-list-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 250px;
+  height: 400px;
+  margin: 0em 1.25em;
+  border-radius: 0.28571429rem;
+  box-shadow: 0px 1px 3px 0px #D4D4D5, 0px 0px 0px 1px #D4D4D5;
+}
+
+.header, .footer {
+  display: flex;
+  flex: 1;
+  padding: 0.5em 0.5em 0 0.5em;
+}
+
+.header .header-wind, .header .header-time,
+.footer .footer-max-temp, .footer .footer-min-temp {
+  flex: 1;
+}
+
+.content {
+  flex: 3;
+}

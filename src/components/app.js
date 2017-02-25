@@ -1,9 +1,13 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { fetchForecast } from '../actions/index';
+import React, { Component }   from 'react';
+import { connect }            from 'react-redux';
+import moment                 from 'moment';
+import { fetchForecast }      from '../actions/index';
+import ForecastHeader         from './forecast-header';
+import ForecastContent        from './forecast-content';
+import ForecastFooter         from './forecast-footer';
 
 class App extends Component {
-  componentDidMount() {
+  componentWillMount() {
     navigator.geolocation.getCurrentPosition(
       this.handleGeolocationSuccess,
       this.handleGeolocationError,
@@ -21,9 +25,29 @@ class App extends Component {
   handleGeolocationError = (error) => {
     console.log(error);
   }
+
+  renderForecastedWeather() {
+    if (this.props.forecast.daily) {
+
+      const data = this.props.forecast.daily.data.slice(0,5);
+      console.log(data);
+      return data.map((weather) => {
+        return (
+          <div className="forecast-list-item" key={weather.time}>
+            <ForecastHeader weather={weather} />
+            <ForecastContent summary={weather.summary} />
+            <ForecastFooter maxTemp={weather.temperatureMax} minTemp={weather.temperatureMin} />
+          </div>
+        );
+      });
+    }
+  }
+
   render() {
     return (
-      <div>React simple starter</div>
+      <div className="forecast-list">
+        {this.renderForecastedWeather()}
+      </div>
     );
   }
 }

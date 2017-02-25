@@ -1,13 +1,18 @@
 import React, { PropTypes } from 'react';
 
-const ForecastContent = ({ summary }) =>  (
+const ForecastContent = ({ maxTemp, minTemp }) => (
   <div className='content'>
-    <h3>{summary}</h3>
+    <div className='content-temp'>
+      <p className='content-max-temp'>{maxTemp.toFixed(0)}&deg;</p>
+      <p className='content-min-temp'>{minTemp.toFixed(0)}&deg;</p>
+    </div>
   </div>
 )
 
 ForecastContent.propTypes = {
-  summary: PropTypes.string,
+  maxTemp: PropTypes.number,
+
+  minTemp: PropTypes.number,
 }
 
 export default ForecastContent

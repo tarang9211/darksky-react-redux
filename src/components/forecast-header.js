@@ -17,7 +17,7 @@ const ForecastHeader = ({ weather }) => (
 
 //display date appropriately.
 const displayTime = (time) => (
-  moment.unix(time).format('ddd, DD MMMM')
+  moment.unix(time).format('ddd, DD MMM')
 )
 
 //Declare propTypes to make sure data received to this component is valid.

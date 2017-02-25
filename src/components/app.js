@@ -4,7 +4,6 @@ import moment                 from 'moment';
 import { fetchForecast }      from '../actions/index';
 import ForecastHeader         from './forecast-header';
 import ForecastContent        from './forecast-content';
-import ForecastFooter         from './forecast-footer';
 
 class App extends Component {
   componentWillMount() {
@@ -35,8 +34,10 @@ class App extends Component {
         return (
           <div className="forecast-list-item" key={weather.time}>
             <ForecastHeader weather={weather} />
-            <ForecastContent summary={weather.summary} />
-            <ForecastFooter maxTemp={weather.temperatureMax} minTemp={weather.temperatureMin} />
+            <ForecastContent maxTemp={weather.temperatureMax} minTemp={weather.temperatureMin} />
+            <div className="footer">
+              <p>Pune, India</p>
+            </div>
           </div>
         );
       });

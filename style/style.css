@@ -1,6 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
 html, body {
   margin: 0px;
   height: 100%;
+  font-family: 'Lato', sans-serif;
+}
+
+
+.background-container {
+  background-image: url('https://images.freecreatives.com/wp-content/uploads/2015/03/Huge-Backgrounds-51.jpg');
+  background-size: cover;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+.container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 9999;
 }
 
 div.forecast-list {
@@ -19,6 +45,7 @@ div.forecast-list-item {
   margin: 0em 1.25em;
   border-radius: 0.28571429rem;
   box-shadow: 0px 1px 3px 0px #D4D4D5, 0px 0px 0px 1px #D4D4D5;
+  background-color: white;
 }
 
 .header, .footer {
@@ -27,11 +54,45 @@ div.forecast-list-item {
   padding: 0.5em 0.5em 0 0.5em;
 }
 
-.header .header-wind, .header .header-time,
-.footer .footer-max-temp, .footer .footer-min-temp {
+.header {
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+}
+
+.footer p {
+  width: 100%;
+  margin-bottom: 0;
+  padding-top: 1.5em;
+  color: #5b5b5b;
+}
+
+.header .header-wind, .header .header-time {
   flex: 1;
 }
 
+
 .content {
   flex: 3;
+  text-align: center;
+}
+
+.content .content-max-temp {
+  font-size: 3em;
+}
+
+.content .content-min-temp {
+  font-size: 1.5em;
+  color: #8c8c8c;
+}
+
+.content h3{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 0.3em 0 0.3em;
+  font-size: 1.28571429em;
+  text-align: center;
 }

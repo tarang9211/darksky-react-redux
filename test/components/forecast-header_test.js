@@ -6,7 +6,7 @@ import ForecastHeader from '../../src/components/forecast-header';
 describe('ForecastHeader', () => {
   let component;
 
-  const speed = faker.random.number({min: 1, max: 10, precision:0.01});
+  const speed = faker.random.number({min: 1, max: 10, precision:0.01 });
 
   const props = {
     weather: {

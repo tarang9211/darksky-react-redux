@@ -7,6 +7,7 @@ import {
 }                             from '../actions/index';
 import ForecastHeader         from './forecast-header';
 import ForecastContent        from './forecast-content';
+import ForecastFooter         from './forecast-footer';
 
 class App extends Component {
   componentWillMount() {
@@ -35,15 +36,14 @@ class App extends Component {
     if (this.props.forecast.daily && this.props.location) {
 
       const data = this.props.forecast.daily.data.slice(0,5);
-      const { city, country } = this.props.location
+      const { city, country } = this.props.location;
+      
       return data.map((weather) => {
         return (
           <div className="forecast-list-item" key={weather.time}>
             <ForecastHeader weather={weather} />
             <ForecastContent maxTemp={weather.temperatureMax} minTemp={weather.temperatureMin} />
-            <div className="footer">
-              <p>{city}, {country}</p>
-            </div>
+            <ForecastFooter city={city} country={country} />
           </div>
         );
       });

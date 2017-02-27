@@ -36,14 +36,14 @@ class App extends Component {
     if (this.props.forecast.daily && this.props.location) {
 
       const data = this.props.forecast.daily.data.slice(0,5);
-      const { city, country } = this.props.location;
-      
+      const { state, country } = this.props.location;
+
       return data.map((weather) => {
         return (
           <div className="forecast-list-item" key={weather.time}>
             <ForecastHeader weather={weather} />
             <ForecastContent maxTemp={weather.temperatureMax} minTemp={weather.temperatureMin} />
-            <ForecastFooter city={city} country={country} />
+            <ForecastFooter state={state} country={country} />
           </div>
         );
       });

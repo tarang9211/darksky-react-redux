@@ -1,5 +1,6 @@
 var express = require('express');
 var axios = require('axios');
+var _ = require('lodash');
 var bodyParser = require('body-parser');
 
 var port = 8081;
@@ -43,15 +44,29 @@ app.get('/api/forecast', function(req, res) {
 app.get('/api/location', function(req, res) {
   var lat   = req.query.latitude;
   var long  = req.query.longitude;
-  console.log(lat);
-  console.log(long);
+
   var requestUrl = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + long;
 
   axios.get(requestUrl)
        .then(function(data) {
-         var city    = data.data.results[0].address_components[5].long_name;
-         var country = data.data.results[0].address_components[6].long_name;
-         res.status(200).json({ city: city, country: country });
+         var results = data.data.results[0].address_components;
+         var state = '';
+         var country = '';
+         results.forEach(function(item) {
+           //check if the types property exists
+           if (item['types']) {
+
+             //extract the state and country values
+             if (_.isEqual(item['types'], ['administrative_area_level_1', 'political'])) {
+               state = item['long_name'];
+             }
+
+             if (_.isEqual(item['types'], [ 'country', 'political'])) {
+               country = item['long_name'];
+             }
+           }
+         });
+         res.status(200).json({ state: state, country: country });
        })
        .catch(function(error) {
          console.log(error);

@@ -1,13 +1,13 @@
 import React, { PropTypes } from 'react';
 
-const ForecastFooter = ({ city, country }) => (
+const ForecastFooter = ({ state, country }) => (
   <div className='footer'>
-    <p className='footer-location'>{city}, {country}</p>
+    <p className='footer-location'>{state}, {country}</p>
   </div>
 )
 
 ForecastFooter.propTypes = {
-  city: PropTypes.string,
+  state: PropTypes.string,
 
   country: PropTypes.string,
 }

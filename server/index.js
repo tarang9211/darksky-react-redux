@@ -43,12 +43,14 @@ app.get('/api/forecast', function(req, res) {
 app.get('/api/location', function(req, res) {
   var lat   = req.query.latitude;
   var long  = req.query.longitude;
+  console.log(lat);
+  console.log(long);
   var requestUrl = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + long;
 
   axios.get(requestUrl)
        .then(function(data) {
-         var city    = data.data.results[2].address_components[2].long_name;
-         var country = data.data.results[2].address_components[4].long_name;
+         var city    = data.data.results[0].address_components[5].long_name;
+         var country = data.data.results[0].address_components[6].long_name;
          res.status(200).json({ city: city, country: country });
        })
        .catch(function(error) {

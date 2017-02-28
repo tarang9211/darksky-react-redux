@@ -10,12 +10,22 @@ import ForecastContent        from './forecast-content';
 import ForecastFooter         from './forecast-footer';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: '',
+    }
+  }
   componentWillMount() {
+    this.getLocation();
+  }
+
+  getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         this.handleGeolocationSuccess,
         this.handleGeolocationError,
-        { enableHighAccuracy: true, timeout: 20000, maximumAge: 2000 },
+        { enableHighAccuracy: true, timeout: 30000, maximumAge: 30000 },
       );
     }
   }
@@ -30,6 +40,12 @@ class App extends Component {
   //callback to handle error
   handleGeolocationError = (error) => {
     console.log(error);
+    if (error.code == 1) {
+      this.setState({ error: 'Please enable permissions to access location and reload the page' });
+    }
+    else if (error.code == 2 && error.message.match(/^Network location provider at 'https:\/\/www.googleapis.com\/' : Returned error code 403.$/)) {
+      this.setState({ error: 'Seems like the internal service for geolocation is down. Please try in a few minutes!'});
+    }
   }
 
   renderForecastedWeather() {
@@ -51,7 +67,13 @@ class App extends Component {
   }
 
   render() {
-    if (this.props.forecast.length == 0 || !this.props.location) {
+    if (this.state.error != '') {
+      return (
+        <div className='error'>
+          <h3>{this.state.error}</h3>
+        </div>
+      )
+    } else if (this.props.forecast.length == 0 || !this.props.location) {
       return (
         <div className='loading'>
           Loading

@@ -36,6 +36,13 @@ div.forecast-list {
   min-height: 100vh;
 }
 
+div.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
 div.loading {
   display: flex;
   justify-content: center;

@@ -4,7 +4,7 @@ import LocationReducer from './reducer_location';
 
 const rootReducer = combineReducers({
   forecast: ForecastReducer,
-  location: LocationReducer,
+  location: LocationReducer
 });
 
 export default rootReducer;

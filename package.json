@@ -11,6 +11,9 @@
     "server": "cd server && node index.js",
     "postinstall": "./node_modules/webpack/bin/webpack.js -p"
   },
+  "engines": {
+    "node": ">= 4.0.0"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {

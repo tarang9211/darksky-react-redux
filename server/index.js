@@ -2,10 +2,7 @@ var express = require('express');
 var axios = require('axios');
 var _ = require('lodash');
 var bodyParser = require('body-parser');
-
-var port = 8081;
-var rootUrl = 'https://api.darksky.net/forecast';
-var API_KEY = '61bbaae2f63f32da32c845cdb2eea9a8';
+var config = require('../config');
 
 var app = express();
 var server = require('http').createServer(app);
@@ -28,7 +25,7 @@ app.get('/api', function(req, res) {
 app.get('/api/forecast', function(req, res) {
   var lat   = req.query.latitude;
   var long  = req.query.longitude;
-  var requestUrl = rootUrl + '/' + API_KEY + '/' + lat + ',' + long;
+  var requestUrl = config.rootUrl + '/' + config.API_KEY + '/' + lat + ',' + long;
 
   axios.get(requestUrl)
        .then(function(data) {
@@ -45,7 +42,7 @@ app.get('/api/location', function(req, res) {
   var lat   = req.query.latitude;
   var long  = req.query.longitude;
 
-  var requestUrl = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + long;
+  var requestUrl = config.geocodeUrl + 'latlng=' + lat + ',' + long;
 
   axios.get(requestUrl)
        .then(function(data) {
@@ -73,5 +70,5 @@ app.get('/api/location', function(req, res) {
        });
 });
 
-server.listen(port);
+server.listen(config.port);
 console.log('Server running');

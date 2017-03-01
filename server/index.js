@@ -70,5 +70,5 @@ app.get('/api/location', function(req, res) {
        });
 });
 
-server.listen(config.port);
+server.listen(process.env.PORT || config.port);
 console.log('Server running');

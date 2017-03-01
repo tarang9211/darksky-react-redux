@@ -70,9 +70,8 @@ app.get('/api/location', function(req, res) {
        })
        .catch(function(error) {
          console.log(error);
-       })
+       });
 });
-
 
 server.listen(port);
 console.log('Server running');

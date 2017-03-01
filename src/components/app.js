@@ -1,9 +1,10 @@
 import React, { Component }   from 'react';
 import { connect }            from 'react-redux';
 import moment                 from 'moment';
+import _                      from 'lodash';
 import {
   fetchForecast,
-  fetchLocation
+  fetchLocation,
 }                             from '../actions/index';
 import ForecastHeader         from './forecast-header';
 import ForecastContent        from './forecast-content';
@@ -14,8 +15,10 @@ class App extends Component {
     super(props);
     this.state = {
       error: '',
+      term: ''
     }
   }
+
   componentWillMount() {
     this.getLocation();
   }
@@ -39,7 +42,6 @@ class App extends Component {
 
   //callback to handle error
   handleGeolocationError = (error) => {
-    console.log(error);
     if (error.code == 1) {
       this.setState({ error: 'Please enable permissions to access location and reload the page' });
     }
@@ -53,6 +55,7 @@ class App extends Component {
 
       const data = this.props.forecast.daily.data.slice(0,5);
       const { state, country } = this.props.location;
+
 
       return data.map((weather) => {
         return (
@@ -81,8 +84,10 @@ class App extends Component {
       )
     } else {
       return (
-        <div className="forecast-list">
-          {this.renderForecastedWeather()}
+        <div className="forecast">
+          <div className="forecast-list">
+            {this.renderForecastedWeather()}
+          </div>
         </div>
       )
     }

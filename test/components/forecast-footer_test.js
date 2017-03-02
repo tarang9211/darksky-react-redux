@@ -1,5 +1,5 @@
-import { renderComponent , expect } from '../test_helper';
 import faker from 'faker';
+import { renderComponent, expect } from '../test_helper';
 import ForecastFooter from '../../src/components/forecast-footer';
 
 describe('ForecastFooter', () => {
@@ -9,9 +9,9 @@ describe('ForecastFooter', () => {
   const country = faker.hacker.noun();
 
   const props = {
-    state: state,
-    country: country,
-  }
+    state,
+    country
+  };
 
   beforeEach(() => {
     component = renderComponent(ForecastFooter, props);

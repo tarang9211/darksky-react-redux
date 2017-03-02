@@ -1,9 +1,7 @@
-import { renderComponent , expect } from '../test_helper';
-import faker from 'faker';
-import moment from 'moment';
+import { renderComponent, expect } from '../test_helper';
 import App from '../../src/components/app';
 
-describe('App' , () => {
+describe('App', () => {
   let component;
 
   beforeEach(() => {

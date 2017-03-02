@@ -6,7 +6,7 @@
   "repository": "git@github.com:StephenGrider/ReduxSimpleStarter.git",
   "scripts": {
     "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "test": "./node_modules/.bin/eslint src && mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
+    "test": "./node_modules/.bin/eslint src test && mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch",
     "postinstall": "./node_modules/webpack/bin/webpack.js -p",
     "start": "node server.js"

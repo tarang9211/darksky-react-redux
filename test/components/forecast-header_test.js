@@ -1,19 +1,19 @@
-import { renderComponent , expect } from '../test_helper';
 import faker from 'faker';
 import moment from 'moment';
+import { renderComponent, expect } from '../test_helper';
 import ForecastHeader from '../../src/components/forecast-header';
 
 describe('ForecastHeader', () => {
   let component;
 
-  const speed = faker.random.number({min: 1, max: 10, precision:0.01 });
+  const speed = faker.random.number({ min: 1, max: 10, precision: 0.01 });
 
   const props = {
     weather: {
       windSpeed: speed,
-      time: 1488135447,
+      time: 1488135447
     }
-  }
+  };
 
   beforeEach(() => {
     component = renderComponent(ForecastHeader, props);

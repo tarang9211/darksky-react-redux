@@ -17,7 +17,6 @@ app.use(function(req, res, next) {
 });
 
 app.use(express.static(__dirname));
-console.log(__dirname);
 
 app.get('/', function(req, res) {
   res.sendFile('index.html');

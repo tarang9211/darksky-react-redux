@@ -2,7 +2,7 @@ var express = require('express');
 var axios = require('axios');
 var _ = require('lodash');
 var bodyParser = require('body-parser');
-var config = require('../config');
+var config = require('./config');
 
 var app = express();
 var server = require('http').createServer(app);

@@ -34,6 +34,9 @@ module.exports = {
     "consistent-return": [
       1
     ],
+    "no-unused-expressions": [
+      0
+    ],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/forbid-prop-types": [1, { "forbid": ['any'] }],
     "react/require-default-props": [1],

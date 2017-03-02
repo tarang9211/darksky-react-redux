@@ -1,3 +1,4 @@
+/* eslint-disable */
 import _$ from 'jquery';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -17,7 +18,7 @@ const $ = _$(window);
 chaiJquery(chai, chai.util, $);
 
 function renderComponent(ComponentClass, props = {}, state = {}) {
-  const componentInstance =  TestUtils.renderIntoDocument(
+  const componentInstance = TestUtils.renderIntoDocument(
     <Provider store={createStore(reducers, state)}>
       <ComponentClass {...props} />
     </Provider>
@@ -33,4 +34,4 @@ $.fn.simulate = function(eventName, value) {
   TestUtils.Simulate[eventName](this[0]);
 };
 
-export {renderComponent, expect};
+export { renderComponent, expect };

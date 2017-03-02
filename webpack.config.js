@@ -19,6 +19,9 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
+  resolveLoader: {
+    moduleExtensions: ['-loader']
+  },
   devServer: {
     historyApiFallback: true,
     contentBase: './'

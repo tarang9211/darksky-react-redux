@@ -1,6 +1,6 @@
 # DarkSky App using React
 
-
+[![Build Status](https://travis-ci.org/tarang9211/darksky-react-redux.svg?branch=master)](https://travis-ci.org/tarang9211/darksky-react-redux)
 
 <br />
 #### Introduction

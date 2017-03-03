@@ -1,5 +1,8 @@
 import React, { PropTypes } from 'react';
 
+/** Stateless functional component responsible for rendering the max and min
+* temp.
+*/
 const ForecastContent = ({ maxTemp, minTemp }) => (
   <div className="content">
     <div className="content-temp">

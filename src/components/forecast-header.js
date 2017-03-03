@@ -12,9 +12,19 @@ const displayTime = time => (
 const ForecastHeader = ({ weather }) => (
   <div className="header">
     <div className="header-wind" title="Wind Speed">
+      <img
+        src="images/wind-sign.png"
+        alt="windspeed"
+        className="icon-img wind-img"
+      />
       <span >{weather.windSpeed.toFixed(0)}<small>mph</small></span>
     </div>
     <div className="header-time">
+      <img
+        src="images/clock.png"
+        alt="clock"
+        className="icon-img clock-img"
+      />
       <span>
         {displayTime(weather.time)}
       </span>

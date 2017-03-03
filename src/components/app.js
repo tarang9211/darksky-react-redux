@@ -81,8 +81,14 @@ class App extends Component {
     }
     return (
       <div className="forecast">
+        <div className="branding-heading">
+          <h5>Powered by <a href="https://darksky.net/dev/">Dark Sky API</a></h5>
+        </div>
         <div className="forecast-list">
           {this.renderForecastedWeather()}
+        </div>
+        <div className="branding-footer">
+          <h5>Developed by - Tarang Hirani</h5>
         </div>
       </div>
     );

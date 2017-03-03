@@ -17,6 +17,7 @@ app.use(function(req, res, next) {
 });
 
 app.use(express.static(__dirname));
+app.use(express.static(__dirname + '/style'));
 
 app.get('/', function(req, res) {
   res.sendFile('index.html');

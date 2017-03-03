@@ -2,7 +2,7 @@
 
 
 
-
+<br />
 #### Introduction
 
 darksky-react-redux is a simple app that implements the [Dark Sky Api](https://darksky.net/dev/). You can view the app [here](https://dark-sky.herokuapp.com/) or follow the build instructions for local use.
@@ -16,7 +16,7 @@ The express server also exposes API endpoints that allows the react app to commu
 
 
 
-
+<br />
 #### Build Instructions
 
 You can also clone to repository to your computer. Once that is done, please follow these steps:

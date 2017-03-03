@@ -44,9 +44,13 @@ class App extends Component {
       this.setState({ error: 'Please enable permissions to access location and reload the page' });
     } else if (error.code === 2 && error.message.match(/^Network location provider at 'https:\/\/www.googleapis.com\/' : Returned error code 403.$/)) {
       this.setState({ error: 'Seems like the internal service for geolocation is down. Please try in a few minutes!' });
+    } else {
+      this.setState({ error: 'Looks like something went wrong! Hang tight while we fetch your location again...' });
+      this.getLocation();
     }
   }
 
+  // Renders the functional components to display the data
   renderForecastedWeather() {
     if (this.props.forecast.daily && this.props.location) {
       const data = this.props.forecast.daily.data.slice(0, 5);

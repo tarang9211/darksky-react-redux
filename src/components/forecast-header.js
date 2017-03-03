@@ -6,7 +6,9 @@ const displayTime = time => (
   moment.unix(time).format('ddd, DD MMM')
 );
 
-// Stateless Functional Component.
+/** Stateless functional component to render the time and windspeed at the
+* user's location
+*/
 const ForecastHeader = ({ weather }) => (
   <div className="header">
     <div className="header-wind" title="Wind Speed">

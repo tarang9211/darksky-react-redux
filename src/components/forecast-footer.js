@@ -3,14 +3,17 @@ import React, { PropTypes } from 'react';
 /** Stateless functional component responsible for rendering the location of
 * the user
 */
-const ForecastFooter = ({ state, country }) => (
+const ForecastFooter = ({ city, country }) => (
   <div className="footer">
-    <p className="footer-location">{state}, {country}</p>
+    <div>
+      <img src="images/location.png" alt="location" className="icon-img location-img" />
+      <span className="footer-location">{city}, {country}</span>
+    </div>
   </div>
 );
 
 ForecastFooter.propTypes = {
-  state: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
 
   country: PropTypes.string.isRequired
 };

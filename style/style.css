@@ -130,7 +130,7 @@ div.forecast-list-item:hover {
   text-align: center;
 }
 
-.footer p {
+.footer div {
   width: 100%;
   margin-bottom: 0;
   padding-top: 1.5em;
@@ -192,9 +192,10 @@ div.forecast-list-item:hover {
   margin-right: 5px;
 }
 
-.icon-img.clock-img {
+.icon-img.clock-img, .icon-img.location-img {
   margin-right: 5px;
 }
+
 
 /*Response styling*/
 @media screen and (max-width: 480px) {

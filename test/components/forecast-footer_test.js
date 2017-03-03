@@ -5,11 +5,11 @@ import ForecastFooter from '../../src/components/forecast-footer';
 describe('ForecastFooter', () => {
   let component;
 
-  const state = faker.hacker.noun();
+  const city = faker.hacker.noun();
   const country = faker.hacker.noun();
 
   const props = {
-    state,
+    city,
     country
   };
 
@@ -22,6 +22,6 @@ describe('ForecastFooter', () => {
   });
 
   it('should display the city and country', () => {
-    expect(component.find('.footer-location')).to.have.text(`${state}, ${country}`);
+    expect(component.find('.footer-location')).to.have.text(`${city}, ${country}`);
   });
 });

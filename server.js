@@ -1,3 +1,4 @@
+/* eslint-disable */
 var express = require('express');
 var axios = require('axios');
 var _ = require('lodash');
@@ -54,15 +55,15 @@ app.get('/api/location', function(req, res) {
   axios.get(requestUrl)
        .then(function(data) {
          var results = data.data.results[0].address_components;
-         var state = '';
+         var city = '';
          var country = '';
          results.forEach(function(item) {
            //check if the types property exists
            if (item['types']) {
 
              //extract the state and country values
-             if (_.isEqual(item['types'], ['administrative_area_level_1', 'political'])) {
-               state = item['long_name'];
+             if (_.isEqual(item['types'], ['locality', 'political'])) {
+               city = item['long_name'];
              }
 
              if (_.isEqual(item['types'], [ 'country', 'political'])) {
@@ -70,7 +71,7 @@ app.get('/api/location', function(req, res) {
              }
            }
          });
-         res.status(200).json({ state: state, country: country });
+         res.status(200).json({ city: city, country: country });
        })
        .catch(function(error) {
          console.log(error);

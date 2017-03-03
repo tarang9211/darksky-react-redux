@@ -80,7 +80,7 @@ div.loading {
 }
 
 div.forecast-list:hover div.forecast-list-item {
-  opacity: 0.4;
+  opacity: 0.75;
 }
 
 div.forecast-list div.forecast-list-item:hover {

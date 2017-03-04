@@ -19,7 +19,10 @@ The express server exposes API endpoints that allows the react app to communicat
 <br />
 #### Build Instructions
 
-You can also clone this repository to your computer. Once that is done, please follow these steps:
+You can also clone this repository to your computer by pasting 
+`git clone https://github.com/tarang9211/darksky-react-redux.git` in a terminal window
+
+. Once that is done, please follow these steps:
 - `npm install --save` (this will install the dependencies)
 - `npm test` (to ensure the app is successfully passing tests and linting)
 - `npm start` (this serves the app on localhost:8080)

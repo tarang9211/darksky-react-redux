@@ -14,9 +14,14 @@ html, body {
 }
 
 div.forecast {
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+div.branding-heading, div.branding-footer {
+  flex: 1;
 }
 
 div.forecast-list {
@@ -26,7 +31,8 @@ div.forecast-list {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 700px;
+  flex: 2;
+  max-width: 100%;
 }
 
 div.error {

@@ -19,7 +19,7 @@ The express server also exposes API endpoints that allows the react app to commu
 <br />
 #### Build Instructions
 
-You can also clone to repository to your computer. Once that is done, please follow these steps:
-1. `npm install --save` (this will install the dependencies)
-2. `npm test` (to ensure the app is successfully passing tests and linting)
-3. `npm start` (this servers the app on localhost:8080)
+You can also clone this repository to your computer. Once that is done, please follow these steps:
+- `npm install --save` (this will install the dependencies)
+- `npm test` (to ensure the app is successfully passing tests and linting)
+- `npm start` (this servers the app on localhost:8080)

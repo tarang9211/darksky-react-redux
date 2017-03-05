@@ -45,7 +45,7 @@ class App extends Component {
     } else if (error.code === 2 && error.message.match(/^Network location provider at 'https:\/\/www.googleapis.com\/' : Returned error code 403.$/)) {
       this.setState({ error: 'Seems like the internal service for geolocation is down. Please try in a few minutes!' });
     } else {
-      this.setState({ error: 'Looks like something went wrong! Hang tight while we fetch your location again...' });
+      this.setState({ error: 'Looks like something went wrong! Please refresh your browser...' });
       this.getLocation();
     }
   }
